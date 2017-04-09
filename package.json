@@ -4,7 +4,7 @@
   "description": "Who doesn't like more info on Star Wars™! A small dashboard using swapi.co",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -p 11300"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/bhagatparwinder/starwars-dashboard/issues"
   },
-  "homepage": "https://github.com/bhagatparwinder/starwars-dashboard#readme"
+  "homepage": "https://github.com/bhagatparwinder/starwars-dashboard#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "http-server": "^0.9.0",
+    "jquery": "^3.2.1"
+  }
 }

@@ -6,10 +6,10 @@
 
 #wrapper {
     padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 #wrapper.toggled {
@@ -17,7 +17,7 @@
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 2;
     position: fixed;
     left: 400px;
     width: 0;
@@ -25,10 +25,11 @@
     margin-left: -400px;
     overflow-y: auto;
     background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -52,7 +53,14 @@
     height: 65px;
     line-height: 60px;
     margin-left: 20px;
-    color: #fff;
+}
+
+.sidebar-cards {
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin: 0 0 20px 20px;
+    padding: 10px 20px;
+    width: 350px;
 }
 
 @media(min-width:768px) {

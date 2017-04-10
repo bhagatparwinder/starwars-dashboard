@@ -12,3 +12,6 @@ npm install
 npm start
 ````
 Go to http://localhost:11300/
+
+# Result
+![alt tag](https://github.com/bhagatparwinder/starwars-dashboard/blob/master/assets/dash.png?raw=true)

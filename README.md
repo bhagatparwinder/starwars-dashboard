@@ -15,3 +15,11 @@ Go to http://localhost:11300/
 
 # Result
 ![alt tag](https://github.com/bhagatparwinder/starwars-dashboard/blob/master/assets/dash.png?raw=true)
+
+Demo: *Page coming soon. Watch this space.*
+
+Get in touch: **contact@bhagat.me**
+
+Follow me on Twitter: **https://twitter.com/bhagatparwinder**
+
+Connect with me on Linkedin: **https://www.linkedin.com/in/bhagatparwinder**

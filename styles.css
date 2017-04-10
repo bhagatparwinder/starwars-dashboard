@@ -2,6 +2,9 @@
     overflow-x: hidden;
  }
 
+h4{
+    font-size: 16px;
+}
 /* Toggle Styles */
 
 #wrapper {
@@ -67,6 +70,9 @@
 .card {
     display: inline-block;
     width: 400px;
+    margin: 0 20px 20px 0;
+    outline: 1px solid #ddd;
+    padding-bottom: 20px;
 }
 
 .card-img-top, .card-title, .card-text {
@@ -75,6 +81,10 @@
 
 .card-text, .card-title{
     width: 50%;
+}
+
+.card-block {
+    padding: 10px;
 }
 
 @media(min-width:768px) {

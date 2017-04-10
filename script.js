@@ -76,7 +76,24 @@ var constructGraph = function(labels, scrollLength, graphData){
     
 };
 
-var createCardDeck = function(){
+var createCardDeck = function(data){
+    var template =  '';
+    var mainArea = document.getElementById('card-holder');
+    for (let i = 0; i < data.length; i+=2){
+        var currentPoster = i+1,
+            nextPoster = i+2;
+        template += '<div class="card">' +
+        '<img class="card-img-top" src="assets/'+ currentPoster +'.jpg" alt="Poster">' +
+        '<img class="card-img-top" src="assets/'+ nextPoster +'.jpg" alt="Poster">' +
+        '<div class="card-block">' +
+        '<h4 class="card-title">'+ data[i].title +'</h4>' +
+        '<h4 class="card-title">'+ data[i].title +'</h4>' +
+        '<span class="card-text"><div>Director: '+ data[i].director +' </div>Cast: Han Solo, Wooki</span>' +
+        '<span class="card-text"><div>Director: '+ data[i].director +' </div>Cast: Han Solo, Wooki</span>' +
+        '</div>' +
+        '</div>';
+    }
+    $(mainArea).append(template);
 
 };
 
@@ -92,6 +109,7 @@ var prepData = function(data){
         scrollLength.push(results[i].opening_crawl.length);
     }
     constructGraph(labels, scrollLength, graphData);
+    createCardDeck(results);
 }
 
 // Trigger on document ready

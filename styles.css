@@ -63,6 +63,20 @@
     width: 350px;
 }
 
+/* Main Area Cards */
+.card {
+    display: inline-block;
+    width: 400px;
+}
+
+.card-img-top, .card-title, .card-text {
+    float: left;
+}
+
+.card-text, .card-title{
+    width: 50%;
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 0;

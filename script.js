@@ -74,26 +74,47 @@ var constructGraph = function (labels, scrollLength, graphData) {
 
 };
 
-var constructTemplate = function (index, value) {
+var getCastNames = function (films) {
+    var castByFilm = [];
+    for (let i = 0; i < films.length; i++) {
+        castByFilm.push([]);
+    }
+    var promise = $.ajax({
+        type: "GET",
+        url: "http://swapi.co/api/people/"
+    });
+    promise.done(function (response) {
+        var castArray = response.results;
+        for (let i = 0; i < castArray.length; i++) {
+            for (let j = 0; j < castArray[i].films.length; j++) {
+                var currentCastFilms = castArray[i].films[j];
+                console.log(currentCastFilms.charAt(currentCastFilms.length - 2));
+            }
+        }
+        createCardDeck(films, castArray);
+    });
+}
+
+var constructTemplate = function (index, value, cast) {
     var render = '<div class="card-number-' + index + '">' +
         '<img class="card-img-top" src="assets/' + index + '.jpg" alt="Poster">' +
-        '<span class="card-text"><h4 class="card-title">' + value.title + '</h4>' + 
-        '<span>Director: ' + value.director + ' </span><br>' + 
-        '<span>Cast: Han Solo, Wooki</span></span>' +
+        '<span class="card-text"><h4 class="card-title">' + value.title + '</h4>' +
+        '<span>Director: ' + value.director + ' </span><br>' +
+        '<span>Cast: ' + cast[0].name + '</span></span>' +
         '</div>';
     return render;
 };
 
-var createCardDeck = function (data) {
+var createCardDeck = function (films, cast) {
     var template = '';
     var mainArea = document.getElementById('card-holder');
-    for (let i = 0; i <= data.length; i += 2) {
+    for (let i = 0; i <= films.length; i += 2) {
         var current = i,
             next = i + 1;
         template += '<div class="card">';
-        template += constructTemplate(current, data[current]);
-        if (data[next]) {
-            template += constructTemplate(next, data[next]);
+        template += constructTemplate(current, films[current], cast);
+        if (films[next]) {
+            template += constructTemplate(next, films[next], cast);
         }
         template += '</div>';
     }
@@ -113,7 +134,7 @@ var prepData = function (data) {
         scrollLength.push(results[i].opening_crawl.length);
     }
     constructGraph(labels, scrollLength, graphData);
-    createCardDeck(results);
+    getCastNames(results);
 }
 
 // Trigger on document ready

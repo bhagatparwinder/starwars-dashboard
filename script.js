@@ -78,7 +78,8 @@ var constructTemplate = function (index, value) {
     var render = '<div class="card-number-' + index + '">' +
         '<img class="card-img-top" src="assets/' + index + '.jpg" alt="Poster">' +
         '<span class="card-text"><h4 class="card-title">' + value.title + '</h4>' + 
-        '<span>Director: ' + value.director + ' </span>Cast: Han Solo, Wooki</span>' +
+        '<span>Director: ' + value.director + ' </span><br>' + 
+        '<span>Cast: Han Solo, Wooki</span></span>' +
         '</div>';
     return render;
 };
